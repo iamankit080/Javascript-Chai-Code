@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with chai and code</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.textContent = langName; // safer to use textContent
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("Python");
+    addLanguage("TypeScript");
+
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li');
+        li.textContent = langName;
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage('GoLang');
+
+    // Edit element
+    const secondLanguage = document.querySelector("li:nth-child(2)");
+    const newLiMojo = document.createElement('li');
+    newLiMojo.textContent = "Mojo";
+    secondLanguage.replaceWith(newLiMojo);
+
+    const firstLanguage = document.querySelector("li:nth-child(1)");
+    const newLiTypeScript = document.createElement('li');
+    newLiTypeScript.textContent = "TypeScript";
+    firstLanguage.replaceWith(newLiTypeScript);
+
+    // remove element 
+    const lastLanguage = document.querySelector("li:last-child");
+    lastLanguage.remove();
+
+</script>
+</html>
+

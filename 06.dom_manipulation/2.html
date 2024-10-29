@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: black; color: #ffff;">
+    <div class="parent">
+        <! comment >
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children); //html collection
+    console.log(parent.children[1].innerHTML);
+
+
+    //for each can't work on html collection but only for can.
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    }
+
+    parent.children[1].style.color= 'yellow';
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    const day1 = document.querySelector('.day')
+    console.log(day1);
+    console.log(day1.parentElement);
+    console.log(day1.nextElementSibling);
+
+
+    console.log("Nodes:", parent.childNodes);
+</script>
+</html>
